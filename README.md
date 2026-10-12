@@ -1,6 +1,7 @@
 # vp-online-mcp
 
 [![CI](https://github.com/ibsorn/vp-online-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/ibsorn/vp-online-mcp/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/vp-online-mcp)](https://www.npmjs.com/package/vp-online-mcp)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Node 20+](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 
@@ -49,13 +50,13 @@ model, stays editable in VP, and is saved to your VP cloud.
 **Claude Code**
 
 ```bash
-claude mcp add vp-online -s user -- npx -y github:ibsorn/vp-online-mcp
+claude mcp add vp-online -s user -- npx -y vp-online-mcp
 ```
 
 On Windows, wrap `npx` with `cmd /c`:
 
 ```bash
-claude mcp add vp-online -s user -- cmd /c npx -y github:ibsorn/vp-online-mcp
+claude mcp add vp-online -s user -- cmd /c npx -y vp-online-mcp
 ```
 
 **Claude Desktop** (`claude_desktop_config.json`), **Cursor** (`~/.cursor/mcp.json`) and most
@@ -66,23 +67,26 @@ other clients:
   "mcpServers": {
     "vp-online": {
       "command": "npx",
-      "args": ["-y", "github:ibsorn/vp-online-mcp"]
+      "args": ["-y", "vp-online-mcp"]
     }
   }
 }
 ```
 
-On Windows use `"command": "cmd"` and `"args": ["/c", "npx", "-y", "github:ibsorn/vp-online-mcp"]`.
+On Windows use `"command": "cmd"` and `"args": ["/c", "npx", "-y", "vp-online-mcp"]`.
 
 **VS Code** (`.vscode/mcp.json`):
 
 ```json
 {
   "servers": {
-    "vp-online": { "type": "stdio", "command": "npx", "args": ["-y", "github:ibsorn/vp-online-mcp"] }
+    "vp-online": { "type": "stdio", "command": "npx", "args": ["-y", "vp-online-mcp"] }
   }
 }
 ```
+
+**Latest commit from GitHub** instead of npm: replace `vp-online-mcp` with
+`github:ibsorn/vp-online-mcp` (the first start clones and installs it, which takes longer).
 
 **From a clone** (for development): `git clone`, `npm install`, then point the client at
 `node /path/to/vp-online-mcp/server.js`.
