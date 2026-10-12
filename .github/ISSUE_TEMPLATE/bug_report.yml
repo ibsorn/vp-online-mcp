@@ -1,0 +1,33 @@
+name: Bug report
+description: Something was built wrong, an error was unclear, or a tool failed
+labels: [bug]
+body:
+  - type: textarea
+    id: call
+    attributes:
+      label: Tool call
+      description: The tool and its arguments (e.g. the vp_build JSON). Smaller is better.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened
+      description: The tool output, and a screenshot (vp_screenshot {path}) if it is visual.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: vp-online-mcp version, OS, Node version, Chrome or Edge version, MCP client
+      placeholder: 2.0.0, Windows 11, Node 22, Chrome 141, Claude Code
+    validations:
+      required: true

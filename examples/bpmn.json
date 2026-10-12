@@ -1,0 +1,19 @@
+{
+  "type": "BusinessProcessDiagram",
+  "elements": [
+    {"key": "pool", "shape": "HorizontalPool", "label": "LIBRARY", "x": 40, "y": 40, "w": 760, "h": 300},
+    {"key": "l1", "shape": "Lane", "label": "Librarian", "parent": "pool", "h": 150},
+    {"key": "l2", "shape": "Lane", "label": "Member", "parent": "pool", "h": 150},
+    {"key": "s", "shape": "StartEvent", "parent": "l1", "x": 30, "y": 55},
+    {"key": "t1", "shape": "Task", "label": "Register book", "parent": "l1", "x": 110, "y": 45},
+    {"key": "g", "shape": "DataBasedExclusiveDecisionMergeXOR", "label": "", "parent": "l2", "x": 140, "y": 50},
+    {"key": "t2", "shape": "UserTask", "label": "Borrow book", "parent": "l2", "x": 260, "y": 45},
+    {"key": "e", "shape": "EndEvent", "parent": "l2", "x": 460, "y": 55}
+  ],
+  "connectors": [
+    {"shape": "SequenceFlow", "from": "s", "to": "t1"},
+    {"shape": "SequenceFlow", "from": "t1", "to": "g"},
+    {"shape": "SequenceFlow", "from": "g", "to": "t2", "label": "available"},
+    {"shape": "SequenceFlow", "from": "t2", "to": "e"}
+  ]
+}

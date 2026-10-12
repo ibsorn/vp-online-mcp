@@ -1,0 +1,22 @@
+{
+  "type": "ClassDiagram",
+  "elements": [
+    {"shape": "Class", "label": "User", "x": 60, "y": 40, "rows": ["-id : String","-fullName : String","-failedLogins : int","+login(id : String, pwd : String) : boolean"]},
+    {"shape": "Class", "label": "Librarian", "x": 20, "y": 260, "rows": ["+unlock(id : String) : void"]},
+    {"shape": "Class", "label": "Member", "x": 280, "y": 260, "rows": ["-cardNumber : String"]},
+    {"shape": "Class", "label": "BookCopy", "x": 560, "y": 260, "rows": ["-barcode : String","-price : float"]},
+    {"shape": "Class", "label": "Loan", "x": 880, "y": 260, "rows": ["-loanId : int","-status : LoanStatus"]},
+    {"shape": "Enumeration", "label": "LoanStatus", "x": 880, "y": 40, "rows": ["ACTIVE","RETURNED","OVERDUE","LOST"]},
+    {"shape": "Interface", "label": "Authenticable", "x": 460, "y": 40, "rows": ["+login(id : String, pwd : String) : boolean"]},
+    {"shape": "Class", "label": "Shelf", "x": 560, "y": 460}
+  ],
+  "connectors": [
+    {"shape": "Generalization", "from": "Librarian", "to": "User"},
+    {"shape": "Generalization", "from": "Member", "to": "User"},
+    {"shape": "Realization", "from": "User", "to": "Authenticable"},
+    {"shape": "Association", "from": "Member", "to": "BookCopy", "label": "holds", "mult": ["0..1","0..1"]},
+    {"shape": "Association", "from": "BookCopy", "to": "Loan", "label": "lent in", "mult": ["1","0..*"], "roles": ["copy","loans"]},
+    {"shape": "Aggregation", "from": "Shelf", "to": "BookCopy", "mult": ["1","1..*"]},
+    {"shape": "Dependency", "from": "Loan", "to": "LoanStatus"}
+  ]
+}

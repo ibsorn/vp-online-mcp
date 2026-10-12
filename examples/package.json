@@ -1,0 +1,15 @@
+{
+  "type": "PackageDiagram",
+  "elements": [
+    {"key": "app", "shape": "Package", "label": "library", "x": 40, "y": 40, "w": 520},
+    {"shape": "Package", "label": "presentation", "parent": "app"},
+    {"shape": "Package", "label": "domain", "parent": "app"},
+    {"shape": "Package", "label": "persistence", "parent": "app"},
+    {"shape": "Package", "label": "java.sql", "x": 640, "y": 60}
+  ],
+  "connectors": [
+    {"shape": "Dependency", "from": "presentation", "to": "domain"},
+    {"shape": "Dependency", "from": "domain", "to": "persistence"},
+    {"shape": "Import", "from": "persistence", "to": "java.sql"}
+  ]
+}

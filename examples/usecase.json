@@ -1,0 +1,23 @@
+{
+  "type": "UseCaseDiagram",
+  "elements": [
+    {"key": "sys", "shape": "System", "label": "LIBRARY", "x": 220, "y": 20, "w": 420},
+    {"shape": "Actor", "label": "Visitor", "x": 130, "y": 60},
+    {"shape": "Actor", "label": "Member", "x": 20, "y": 140},
+    {"shape": "Actor", "label": "Librarian", "x": 20, "y": 250},
+    {"key": "uc1", "shape": "UseCase", "label": "Log in", "parent": "sys"},
+    {"key": "uc3", "shape": "UseCase", "label": "Check availability", "parent": "sys"},
+    {"key": "uc2", "shape": "UseCase", "label": "Borrow book", "parent": "sys"},
+    {"key": "uc4", "shape": "UseCase", "label": "Show error", "parent": "sys"},
+    {"key": "uc5", "shape": "UseCase", "label": "Add book", "parent": "sys"}
+  ],
+  "connectors": [
+    {"shape": "Association", "from": "Visitor", "to": "uc1"},
+    {"shape": "Generalization", "from": "Member", "to": "Visitor"},
+    {"shape": "Generalization", "from": "Librarian", "to": "Visitor"},
+    {"shape": "Association", "from": "Member", "to": "uc2"},
+    {"shape": "Include", "from": "uc2", "to": "uc3"},
+    {"shape": "Extend", "from": "uc4", "to": "uc2"},
+    {"shape": "Association", "from": "Librarian", "to": "uc5"}
+  ]
+}

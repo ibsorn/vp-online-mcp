@@ -1,0 +1,16 @@
+{
+  "type": "ERDiagram",
+  "elements": [
+    {"shape": "Entity", "label": "User", "x": 40, "y": 40, "rows": ["PK id varchar(9)","fullName varchar(100)","failedLogins int"]},
+    {"shape": "Entity", "label": "Member", "x": 40, "y": 300, "rows": ["PK,FK userId varchar(9)","cardPhoto varchar(255)"]},
+    {"shape": "Entity", "label": "BookCopy", "x": 380, "y": 300, "rows": ["PK barcode varchar(10)","FK memberId varchar(9)"]},
+    {"shape": "Entity", "label": "Loan", "x": 700, "y": 300, "rows": ["PK loanId int","FK barcode varchar(10)",{"text":"status varchar(12)","set":{"nullable":"false"}}]},
+    {"shape": "View", "label": "ActiveLoans", "x": 700, "y": 40, "rows": ["loanId int"]},
+    {"shape": "Triggers", "label": "TrgLoan", "x": 380, "y": 40, "rows": ["onInsert"], "rowAction": "addTrigger"}
+  ],
+  "connectors": [
+    {"shape": "OnetoOneRelationship", "from": "User", "to": "Member"},
+    {"shape": "OnetoOneRelationship", "from": "Member", "to": "BookCopy"},
+    {"shape": "OnetoManyRelationship", "from": "BookCopy", "to": "Loan"}
+  ]
+}

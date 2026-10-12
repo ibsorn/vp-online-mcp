@@ -1,0 +1,18 @@
+{
+  "type": "Flowchart",
+  "elements": [
+    {"shape": "Start", "label": "Begin", "x": 205, "y": 20},
+    {"shape": "Data", "label": "Read user and password", "x": 159, "y": 100},
+    {"shape": "Decision", "label": "Credentials OK?", "x": 175, "y": 200},
+    {"shape": "Process", "label": "failedLogins++", "x": 420, "y": 220, "h": 60},
+    {"shape": "Process", "label": "Show home", "x": 205, "y": 330, "h": 60},
+    {"shape": "Terminator", "label": "End", "x": 205, "y": 460}
+  ],
+  "connectors": [
+    {"shape": "FlowLine", "from": "Begin", "to": "Read user and password"},
+    {"shape": "FlowLine", "from": "Read user and password", "to": "Credentials OK?"},
+    {"shape": "FlowLine", "from": "Credentials OK?", "to": "Show home", "label": "yes"},
+    {"shape": "FlowLine", "from": "Credentials OK?", "to": "failedLogins++", "label": "no"},
+    {"shape": "FlowLine", "from": "Show home", "to": "End"}
+  ]
+}

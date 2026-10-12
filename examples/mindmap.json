@@ -1,0 +1,14 @@
+{
+  "type": "MindMapDiagram",
+  "elements": [
+    {"shape": "Node", "label": "Library", "x": 300, "y": 200},
+    {"shape": "Node", "label": "Books", "x": 80, "y": 80},
+    {"shape": "Node", "label": "Loans", "x": 560, "y": 80},
+    {"shape": "Node", "label": "Members", "x": 300, "y": 380}
+  ],
+  "connectors": [
+    {"shape": "Branch", "from": "Library", "to": "Books"},
+    {"shape": "Branch", "from": "Library", "to": "Loans"},
+    {"shape": "Branch", "from": "Library", "to": "Members"}
+  ]
+}

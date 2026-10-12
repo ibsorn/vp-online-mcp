@@ -1,0 +1,15 @@
+{
+  "type": "ComponentDiagram",
+  "elements": [
+    {"shape": "Component", "label": "WebApp", "x": 40, "y": 60, "w": 160, "h": 90},
+    {"key": "p1", "shape": "Port", "label": "http", "parent": "WebApp"},
+    {"shape": "Component", "label": "LoanService", "x": 320, "y": 60, "w": 180, "h": 90},
+    {"shape": "Interface", "label": "ILoans", "x": 340, "y": 240},
+    {"shape": "Component", "label": "DB", "x": 620, "y": 60}
+  ],
+  "connectors": [
+    {"shape": "Usage", "from": "WebApp", "to": "ILoans"},
+    {"shape": "Realization", "from": "LoanService", "to": "ILoans"},
+    {"shape": "Dependency", "from": "LoanService", "to": "DB", "label": "JDBC"}
+  ]
+}

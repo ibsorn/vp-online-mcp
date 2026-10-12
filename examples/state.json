@@ -1,0 +1,19 @@
+{
+  "type": "StateMachineDiagram",
+  "elements": [
+    {"key": "i", "shape": "InitialPseudoState", "x": 40, "y": 60},
+    {"shape": "State", "label": "Reserved", "x": 120, "y": 40},
+    {"shape": "State", "label": "Active", "x": 320, "y": 40},
+    {"shape": "State", "label": "Returned", "x": 520, "y": 0},
+    {"shape": "State", "label": "Lost", "x": 520, "y": 100},
+    {"key": "f", "shape": "FinalState", "x": 720, "y": 60}
+  ],
+  "connectors": [
+    {"shape": "Transition", "from": "i", "to": "Reserved"},
+    {"shape": "Transition", "from": "Reserved", "to": "Active", "label": "pickUp()"},
+    {"shape": "Transition", "from": "Active", "to": "Returned", "label": "return(date)"},
+    {"shape": "Transition", "from": "Active", "to": "Lost", "label": "reportLost(reason)"},
+    {"shape": "Transition", "from": "Returned", "to": "f"},
+    {"shape": "Transition", "from": "Lost", "to": "f"}
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ibsorn/vp-online-mcp",
+  "title": "Visual Paradigm Online",
+  "description": "Build native, editable Visual Paradigm Online diagrams (UML, ER, BPMN, DFD...) in one call.",
+  "repository": {
+    "url": "https://github.com/ibsorn/vp-online-mcp",
+    "source": "github"
+  },
+  "version": "2.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "vp-online-mcp",
+      "version": "2.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "CHROME_PATH",
+          "description": "Path to Chrome or Edge (auto-detected when unset)",
+          "isRequired": false,
+          "format": "string"
+        },
+        {
+          "name": "VP_WORKSPACE",
+          "description": "Visual Paradigm Online workspace id (auto-detected when unset)",
+          "isRequired": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

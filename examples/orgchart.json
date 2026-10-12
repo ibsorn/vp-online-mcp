@@ -1,0 +1,12 @@
+{
+  "type": "OrganizationChart",
+  "elements": [
+    {"shape": "Unit", "label": "Director", "x": 260, "y": 20},
+    {"shape": "Unit", "label": "Operations", "x": 100, "y": 160},
+    {"shape": "Unit", "label": "Administration", "x": 420, "y": 160}
+  ],
+  "connectors": [
+    {"shape": "Line", "from": "Director", "to": "Operations"},
+    {"shape": "Line", "from": "Director", "to": "Administration"}
+  ]
+}

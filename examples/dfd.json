@@ -1,0 +1,13 @@
+{
+  "type": "DataFlowDiagram",
+  "elements": [
+    {"shape": "ExternalEntity", "label": "Member", "x": 40, "y": 120},
+    {"shape": "Process", "label": "1.0 Borrow book", "x": 280, "y": 100},
+    {"shape": "DataStore", "label": "D1 Loans", "x": 300, "y": 300}
+  ],
+  "connectors": [
+    {"shape": "DataFlow", "from": "Member", "to": "1.0 Borrow book", "label": "book request"},
+    {"shape": "DataFlow", "from": "1.0 Borrow book", "to": "D1 Loans", "label": "new loan"},
+    {"shape": "BidirectionalDataFlow", "from": "D1 Loans", "to": "Member", "label": "query"}
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "vp-online-mcp",
+  "version": "2.0.0",
+  "mcpName": "io.github.ibsorn/vp-online-mcp",
+  "description": "MCP server that builds native, editable Visual Paradigm Online diagrams (UML, ER, BPMN, DFD, flowcharts...) in a single tool call",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "visual-paradigm",
+    "uml",
+    "class-diagram",
+    "sequence-diagram",
+    "er-diagram",
+    "bpmn",
+    "diagrams",
+    "claude",
+    "playwright"
+  ],
+  "homepage": "https://github.com/ibsorn/vp-online-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/ibsorn/vp-online-mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibsorn/vp-online-mcp.git"
+  },
+  "license": "MIT",
+  "author": "ibsorn (https://github.com/ibsorn)",
+  "type": "module",
+  "main": "server.js",
+  "bin": {
+    "vp-online-mcp": "server.js"
+  },
+  "files": [
+    "server.js",
+    "lib/",
+    "examples/",
+    "README.md",
+    "README.es.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node server.js",
+    "check": "node test/smoke.js",
+    "test": "node test/e2e.js",
+    "test:save": "node test/e2e.js --save",
+    "measure": "node test/measure.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "playwright-core": "^1.64.0",
+    "zod": "^4.6.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

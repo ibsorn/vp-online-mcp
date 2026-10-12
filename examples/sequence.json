@@ -1,0 +1,17 @@
+{
+  "type": "SequenceDiagram",
+  "elements": [
+    {"key": "m", "shape": "Actor", "label": "Member", "x": 40, "y": 20},
+    {"key": "ui", "shape": "BoundaryLifeline", "label": ":LoanScreen", "x": 200, "y": 20},
+    {"key": "ctl", "shape": "ControlLifeline", "label": ":LoanController", "x": 400, "y": 20},
+    {"key": "db", "shape": "EntityLifeline", "label": ":Loan", "x": 600, "y": 20}
+  ],
+  "connectors": [
+    {"shape": "Message", "from": "m", "to": "ui", "label": "1: borrow(isbn)"},
+    {"shape": "Message", "from": "ui", "to": "ctl", "label": "2: createLoan(isbn)"},
+    {"shape": "SelfMessage", "from": "ctl", "to": "ctl", "label": "3: validate()"},
+    {"shape": "Message", "from": "ctl", "to": "db", "label": "4: setStatus(ACTIVE)"},
+    {"shape": "ReplyMessage", "from": "ctl", "to": "ui", "label": "5: ok"},
+    {"shape": "ReplyMessage", "from": "ui", "to": "m", "label": "6: \"Loan created\""}
+  ]
+}

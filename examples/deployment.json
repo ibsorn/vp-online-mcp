@@ -1,0 +1,17 @@
+{
+  "type": "DeploymentDiagram",
+  "elements": [
+    {"key": "web", "shape": "DeviceNode", "label": "Web server", "x": 360, "y": 40, "w": 300},
+    {"shape": "ExecutionEnvironmentNode", "label": "Library system", "parent": "web"},
+    {"shape": "Artifact", "label": "library DB", "parent": "web"},
+    {"key": "sec", "shape": "DeviceNode", "label": "Auth server", "x": 360, "y": 420, "w": 300},
+    {"shape": "Component", "label": "VPN server", "parent": "sec"},
+    {"shape": "DeviceNode", "label": "Kiosk", "x": 760, "y": 420},
+    {"shape": "DeviceNode", "label": "Librarian PC", "x": 40, "y": 60}
+  ],
+  "connectors": [
+    {"shape": "Link", "from": "web", "to": "sec", "label": "fiber optic"},
+    {"shape": "Link", "from": "Kiosk", "to": "sec", "label": "internet (VPN)"},
+    {"shape": "Link", "from": "Librarian PC", "to": "web", "label": "wifi"}
+  ]
+}

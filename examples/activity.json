@@ -1,0 +1,29 @@
+{
+  "type": "ActivityDiagram",
+  "elements": [
+    {"key": "i", "shape": "InitialNode", "x": 220, "y": 20},
+    {"key": "a1", "shape": "Action", "label": "Select book", "x": 160, "y": 90, "w": 150},
+    {"key": "in", "shape": "InputPin", "label": "isbn", "parent": "a1"},
+    {"key": "d", "shape": "DecisionNode", "label": "", "x": 220, "y": 190},
+    {"key": "f", "shape": "ForkNode", "x": 60, "y": 280, "w": 160, "h": 8},
+    {"key": "a2", "shape": "Action", "label": "Register loan", "x": 20, "y": 330},
+    {"key": "a3", "shape": "Action", "label": "Notify member", "x": 150, "y": 330},
+    {"key": "j", "shape": "JoinNode", "x": 60, "y": 420, "w": 160, "h": 8},
+    {"key": "a4", "shape": "Action", "label": "Show error", "x": 330, "y": 330},
+    {"key": "m", "shape": "MergeNode", "label": "", "x": 220, "y": 480},
+    {"key": "fin", "shape": "ActivityFinalNode", "x": 225, "y": 560}
+  ],
+  "connectors": [
+    {"shape": "ControlFlow", "from": "i", "to": "a1"},
+    {"shape": "ControlFlow", "from": "a1", "to": "d"},
+    {"shape": "ControlFlow", "from": "d", "to": "f", "label": "[available]"},
+    {"shape": "ControlFlow", "from": "d", "to": "a4", "label": "[on loan]"},
+    {"shape": "ControlFlow", "from": "f", "to": "a2"},
+    {"shape": "ControlFlow", "from": "f", "to": "a3"},
+    {"shape": "ControlFlow", "from": "a2", "to": "j"},
+    {"shape": "ControlFlow", "from": "a3", "to": "j"},
+    {"shape": "ControlFlow", "from": "j", "to": "m"},
+    {"shape": "ControlFlow", "from": "a4", "to": "m"},
+    {"shape": "ControlFlow", "from": "m", "to": "fin"}
+  ]
+}
